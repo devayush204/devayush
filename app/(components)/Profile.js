@@ -21,7 +21,7 @@ const Profile = ()  => {
                     </div>
                     <div className='flex gap-2 md:gap-4 mt-10 xl:mt-5'>
                         <button className='flex-1 text-white flex gap-1 md:gap-2 items-center justify-center outline-none px-4 md:px-5 md:py-3 bg-zinc-600 rounded-full '>
-                            <Image src={file}/>
+                            <Image alt='file' src={file}/>
                             Know More
                             </button>
                         <button className='text-white flex-1 border border-white/20 hover:border-white/50 rounded-full px-5 py-3'>Contact </button>
