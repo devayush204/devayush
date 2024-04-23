@@ -1,5 +1,3 @@
-// CardContainer.jsx
-
 import React, { createContext, useState, useContext, useRef, useEffect } from "react";
 import { cn } from "@/utils/cn";
 
@@ -30,7 +28,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(" flex items-center justify-center", containerClassName)}
+        className={cn("flex items-center justify-center", containerClassName)}
         style={{ perspective: "1000px" }}
       >
         <div
@@ -53,7 +51,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
 
 export const CardBody = ({ children, className }) => {
   return (
-    <div className={cn(" [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]", className)}>
+    <div className={cn("[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]", className)}>
       {children}
     </div>
   );
@@ -64,18 +62,18 @@ export const CardItem = ({ as: Tag = "div", children, className, ...rest }) => {
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
+    const handleAnimations = () => {
+      if (!ref.current) return;
+      const { translateX = 0, translateY = 0, translateZ = 0, rotateX = 0, rotateY = 0, rotateZ = 0 } = rest;
+      if (isMouseEntered) {
+        ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      } else {
+        ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+      }
+    };
 
-  const handleAnimations = () => {
-    if (!ref.current) return;
-    const { translateX = 0, translateY = 0, translateZ = 0, rotateX = 0, rotateY = 0, rotateZ = 0 } = rest;
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
-    }
-  };
+    handleAnimations();
+  }, [isMouseEntered, rest]); // Include handleAnimations and isMouseEntered in the dependency array
 
   return (
     <Tag ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)} {...rest}>

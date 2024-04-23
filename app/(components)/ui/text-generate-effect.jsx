@@ -1,49 +1,38 @@
-"use client";
-import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 const TextGenerateEffect = ({ words, className }) => {
-  const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
-  
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
+  const controls = useAnimation();
+  const wordsArray = words.split(" ");
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
+  useEffect(() => {
+    const animateWords = async () => {
+      await controls.start("visible");
+    };
+
+    animateWords();
+  }, [controls]);
+
+  return (
+    <div className={cn("font-bold", className)}>
+      <div className="flex items-center justify-center bg-blue-[#191919]">
+        <div className="text-[60px] w-[100vw] h-[100vh] text-center tracking-wide">
+          {wordsArray.map((word, idx) => (
             <motion.span
               key={word + idx}
-              className="  text-white opacity-0  "
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+              className="text-white"
             >
               {word}{" "}
             </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
-
-  return (
-    <div className={cn("font-bold ", className)}>
-      <div className="flex items-center justify-center bg-blue-[#191919]">
-        <div className="  text-[60px] w-[100vw] h-[100vh] text-center tracking-wide">
-          {renderWords()}
-      </div>
-        
+          ))}
+        </div>
       </div>
     </div>
   );
