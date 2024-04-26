@@ -16,7 +16,9 @@ export default function Projects() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
         {data.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+          <div key={project.id} className="  ">
+            <ProjectCard {...project} />
+          </div>
         ))}
       </div>
     </section>
@@ -43,7 +45,7 @@ function ProjectCard({ title, description, imageUrl, liveUrl, sourceCode }) {
           />
         </CardItem>
         <div className="flex  mt-7 justify-between">
-          <a className=" top-5 right-10 underline text-white text-base flex items-center hover:translate-x-1 transition-transform" href="/">
+          <a className=" top-5 right-10 underline text-white text-base flex items-center hover:translate-x-1 transition-transform" href={liveUrl}>
             <p>Live Preview</p>
             <svg version="1.1" id="Layer_1" className="w-4 ml-1" viewBox="0 0 50 50" enable-background="new 0 0 50 50">
               <path fill="white" d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15
@@ -51,7 +53,7 @@ function ProjectCard({ title, description, imageUrl, liveUrl, sourceCode }) {
   C15.172,39.813,15.172,40.446,15.563,40.836z"/>
             </svg>
           </a>
-          <a  className=" top-5 right-10 underline text-white text-base flex items-center hover:translate-x-1 transition-transform" href={liveUrl} target="_blank" >
+          <a className=" top-5 right-10 underline text-white text-base flex items-center hover:translate-x-1 transition-transform" href={sourceCode} target="_blank" >
             <p >Source Code</p>
             <svg version="1.1" id="Layer_1" className="w-4 ml-1" viewBox="0 0 50 50" enable-background="new 0 0 50 50">
               <path fill="white" d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15

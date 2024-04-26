@@ -6,6 +6,7 @@ import Profile from './(components)/Profile';
 import Skills from './(components)/Skills';
 import Projects from './(components)/Projects';
 import Loader from './(components)/Loader';
+import Contact from './(components)/Contact';
 
 export default function Home() {
   const [loading, setLoading] = useState(true); 
@@ -68,6 +69,7 @@ export default function Home() {
           </div>
           <Skills />
           <Projects/>
+          <Contact/>
         </>
       )}
     </section>
