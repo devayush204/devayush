@@ -3,6 +3,8 @@ import img2 from "../assets/p2.png"
 import img3 from "../assets/p3.png"
 import img4 from "../assets/p4.png"
 import img5 from "../assets/p5.jpg"
+import img6 from "../assets/p6.png"
+
 export const projectData = [
   {
     id: 1,
@@ -46,10 +48,10 @@ export const projectData = [
   },
   {
     id: 6,
-    title: "Make things float in air",
-    description: "Hover over this card to unleash the power of CSS perspective",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    liveUrl: "https://example.com/makethingsfloat",
+    title: "Sociopedia",
+    description: "A mern stack social media web application where users can create, edit, and delete their posts. They can also share their posts with others.",
+    imageUrl: img6,
+    liveUrl: "",
     sourceCode: "https://github.com/example/makethingsfloat"
   }
 ];
