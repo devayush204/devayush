@@ -11,16 +11,16 @@ export const projectData = [
     title: "Snacks here",
     description: "An online food ordering webapp where users can order their favorite food and get it delivered to their address.",
     imageUrl: img1,
-    liveUrl: "https://example.com/snackshere",
-    sourceCode: "https://github.com/example/snackshere"
+    liveUrl: "https://food-ordering-6ccicbyzr-devayush204s-projects.vercel.app/",
+    sourceCode: "https://github.com/devayush204/food-ordering-app"
   },
   {
     id: 2,
     title: "File Sharing Webapp",
     description: "A web application for securely sharing files with others. Users can upload files, generate shareable links, and manage their shared files.",
     imageUrl: img2,
-    liveUrl: "https://example.com/makethingsfloat",
-    sourceCode: "https://github.com/example/makethingsfloat"
+    liveUrl: "https://file-uploading-psi.vercel.app/",
+    sourceCode: "https://github.com/devayush204/file-uploading"
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export const projectData = [
     title: "Sociopedia",
     description: "A mern stack social media web application where users can create, edit, and delete their posts. They can also share their posts with others.",
     imageUrl: img6,
-    liveUrl: "",
-    sourceCode: "https://github.com/example/makethingsfloat"
+    liveUrl: "https://github.com/devayush204/sociopedia",
+    sourceCode: "https://github.com/devayush204/sociopedia"
   }
 ];
