@@ -3,24 +3,39 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import img from '../assets/contact-peep.svg'
 import { db } from '@/utils/firestoreConfig'
+import { addDoc, collection } from 'firebase/firestore'
 
 const Contact = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await addDoc(collection(db, 'contacts'), {
+      name: name,
+      email: email,
+      message: message,
+      timestamp: new Date() // Add timestamp for record
+    });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await db.collection('contacts').add(formData);
-      console.log('Data saved successfully!');
-      // Optionally, reset the form after submission
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Error saving data:', error.message);
-    }
-  };
+    // Clear the form fields after submission
+    setName("");
+    setEmail("");
+    setMessage("");
+
+    alert("Your message has been submitted successfully!");
+    console.log("Your message has been submitted successfully!");
+  } catch (error) {
+    console.error("Error adding document: ", error);
+    alert("An error occurred while submitting your message. Please try again later.");
+  }
+};
+
+
+  
   return (
     <section className='flex py-10 items-center h-[100vh] ' id='contact'>
       <div className='flex-1 flex justify-end '>
@@ -61,6 +76,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      
     </section>
   )
 }

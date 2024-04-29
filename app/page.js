@@ -7,6 +7,7 @@ import Skills from './(components)/Skills';
 import Projects from './(components)/Projects';
 import Loader from './(components)/Loader';
 import Contact from './(components)/Contact';
+import ContactLinks from './(components)/ContactLinks';
 
 export default function Home() {
   const [loading, setLoading] = useState(true); 
@@ -70,6 +71,7 @@ export default function Home() {
           <Skills />
           <Projects/>
           <Contact/>
+          <ContactLinks/>
         </>
       )}
     </section>
