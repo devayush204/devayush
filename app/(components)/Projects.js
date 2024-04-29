@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section id="projects" className="">
       <div className="flex justify-center items-center mb-10">
-        <button className={`text-lg xl:text-xl px-5 py-2 rounded-xl bg-black  text-white/70 `}>
+        <button className={`text-lg xl:text-xl px-5 py-3 rounded-xl bg-black  text-white/70 `}>
           Projects
         </button>
       </div>
