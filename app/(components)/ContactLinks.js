@@ -70,7 +70,7 @@ const ContactLinks = () => {
             <div className=''>
                 <ul className='flex flex-col justify-center items-center  p-10'>
                     {data.map((item, index) => (
-                        <li className={`px-5 py-3 w-full flex justify-center items-center key={index}`}>
+                        <li className={`px-5 py-3 w-full flex justify-center items-center`} key={index}>
                             <a className={`${index === 0 ? 'bg-white/10 text-white/80 fill-white/80 '  : 'text-white/50 fill-white/50'} flex px-10 py-3 gap-3 items-center ${index != 0 ? 'border-[1px] border-zinc-800' : '' } rounded-full justify-center `} >
                                 {item.image}
                                 <p className='capitalize text-sm font-extralight w-40 '>{item.title}</p>
