@@ -9,6 +9,14 @@ const Profile = ()  => {
         const newWindow = window.open('/Ayush-resume.pdf');
         newWindow.opener = null;
     };
+
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id='profile' className='xl:px-44 px-5 md:px-10 '>
             <div className='flex justify-center items-center gap-10  '>
@@ -29,7 +37,7 @@ const Profile = ()  => {
                             <Image alt='file' src={file} />
                             Know More
                         </button>
-                        <button className='text-white flex-1 border border-white/20 hover:border-white/50 rounded-full px-5 py-3'>Contact </button>
+                        <button onClick={scrollToContact} className='text-white flex-1 border border-white/20 hover:border-white/50 rounded-full px-5 py-3'>Contact </button>
                     </div>
                 </div>
             </div>

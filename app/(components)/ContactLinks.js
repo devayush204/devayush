@@ -66,7 +66,7 @@ const ContactLinks = () => {
 
 
     return (
-        <div className='flex flex-col items-center justify-center py-10 h-[100vh] '>
+        <div className='flex flex-col items-center justify-center gap-40 py-10  '>
             <div className=''>
                 <ul className='flex flex-col justify-center items-center  p-10'>
                     {data.map((item, index) => (
@@ -80,7 +80,7 @@ const ContactLinks = () => {
                 </ul>
             </div>
 
-            <div className='mt-44'>
+            <div className=''>
                 <div className='flex items-center justify-center gap-14'>
                 {data2.map((item, index) => (
                         <span
