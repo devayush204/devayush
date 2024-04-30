@@ -44,6 +44,12 @@ const Header = ({ scrollToHero, scrollToProfile, scrollToSkills, scrollToproject
         return element ? element.offsetTop : 0;
     };
 
+
+    const handleDownloadResume = () => {
+        const newWindow = window.open('/Ayush-resume.pdf');
+        newWindow.opener = null;
+    };
+
     return (
         <div className='bg-[#191919] md:py-5 py-4 px-5 fixed w-full border-b-2 border-gray-500 md:border-0 z-10'>
             <ul className='md:flex md:gap-16 hidden items-center justify-center'>
@@ -67,7 +73,7 @@ const Header = ({ scrollToHero, scrollToProfile, scrollToSkills, scrollToproject
                 </li>
             </ul>
             <ul className='flex justify-between items-center md:hidden'>
-                <li className='flex gap-2 items-center'>
+                <li onClick={handleDownloadResume} className='flex gap-2 items-center'>
                     <Image className='w-[30px]' src={img7} alt='Download CV' />
                     <p className='text-white font-semibold'>Download CV</p>
                 </li>
