@@ -51,7 +51,7 @@ const Header = ({ scrollToHero, scrollToProfile, scrollToSkills, scrollToproject
     };
 
     return (
-        <div className='bg-[#191919] md:py-5 py-4 px-5 fixed w-full border-b-2 border-gray-500 md:border-0 z-10'>
+        <div className='bg-[#191919] md:py-5 py-4 px-5 fixed w-[100vw] border-b-2 border-gray-500 md:border-0 z-10'>
             <ul className='md:flex md:gap-10 hidden items-center justify-center'>
                 <li className={`p-3 cursor-pointer ${activeItem === 'hero' ? 'border-b-2 border-b-zinc-600 rounded-b-xl' : ''}`} onClick={scrollToHero}>
                     <Image className='w-[25px]' src={img1} alt='Home' />
