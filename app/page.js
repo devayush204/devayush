@@ -65,7 +65,7 @@ export default function Home() {
       {/* Render Profile, Skills, and Projects components only if isLoading is false */}
       {!loading && (
         <>
-          <div className="h-[100vh] flex justify-center items-center" >
+          <div className="h-[100vh] w-[100vw] flex justify-center items-center" >
             <Profile />
           </div>
           <Skills />
