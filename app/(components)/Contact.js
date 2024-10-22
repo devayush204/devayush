@@ -54,10 +54,12 @@ const Contact = () => {
               value={message}
               onChange={e => setMessage(e.target.value)}></textarea>
             </div>
+<div>
             
               <button className='text-center bg-[#262626] text-xl rounded-lg py-3 hover:bg-black hover:text-white transition-all duration-50 '
               onClick={handleSubmit}
               >Submit</button>
+</div>
           </form>
         </div>
       </div>
